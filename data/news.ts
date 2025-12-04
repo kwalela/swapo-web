@@ -1,38 +1,38 @@
 export const NEWS_ITEMS = [
   {
     id: 1,
-    title: "President Hage Geingob: 'Unity is our greatest strength'",
-    category: "Speech",
-    date: "Dec 04, 2025",
-    image: "https://images.unsplash.com/photo-1541872703-74c5963631df?q=80&w=2070&auto=format&fit=crop", // Placeholder
-    excerpt: "In his address to the Central Committee, the President emphasized the need for disciplined cadres and service delivery.",
+    title: "President Nandi-Ndaitwah hails 'historic' Regional Election results",
+    category: "Presidency",
+    date: "Dec 01, 2025",
+    image: "https://images.unsplash.com/photo-1577962917302-cd874c4e3169?q=80&w=1932&auto=format&fit=crop", // Use a crowd photo here
+    excerpt: "The President has thanked voters in Erongo and Hardap for returning their trust to SWAPO, calling it a mandate for accelerated development.",
     featured: true
   },
   {
     id: 2,
-    title: "Electoral Commission announces registration dates",
-    category: "Press Release",
-    date: "Dec 02, 2025",
+    title: "Cabinet approves new Youth Employment Scheme (YES)",
+    category: "Policy",
+    date: "Nov 28, 2025",
     image: null,
-    excerpt: "All eligible voters are urged to verify their details at local polling stations starting next Monday.",
+    excerpt: "The N$500 million initiative aims to create 15,000 sustainable jobs in the agriculture and technology sectors.",
     featured: false
   },
   {
     id: 3,
-    title: "SPYL launches green hydrogen youth training program",
-    category: "Youth League",
-    date: "Nov 28, 2025",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop",
-    excerpt: "Over 500 young people will receive technical training in the Erongo region.",
+    title: "Electoral Commission confirms SWAPO majority in 10 regions",
+    category: "Elections",
+    date: "Nov 27, 2025",
+    image: "https://images.unsplash.com/photo-1540910419868-4749459ca6c8?q=80&w=2069&auto=format&fit=crop",
+    excerpt: "Official results show a decisive victory for the ruling party in the 2025 Regional Council elections.",
     featured: false
   },
   {
     id: 4,
-    title: "Women's Council to hold fundraising gala in Windhoek",
-    category: "SPWC",
-    date: "Nov 25, 2025",
+    title: "SPWC fundraising gala raises N$2m for rural clinics",
+    category: "Women's Council",
+    date: "Nov 20, 2025",
     image: null,
-    excerpt: "Proceeds will go towards supporting rural kindergarten initiatives.",
+    excerpt: "The gala dinner in Windhoek was attended by business leaders and party veterans.",
     featured: false
   }
 ];

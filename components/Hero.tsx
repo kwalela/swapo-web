@@ -3,19 +3,23 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image'; // Import Image component
 
 export default function Hero() {
   return (
     <div className="relative h-[85vh] w-full overflow-hidden bg-neutral-900">
       
-      {/* 1. BACKGROUND IMAGE */}
-      {/* Replace this URL with your local image later, e.g., '/images/rally.jpg' */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1623945205562-b91176b509f6?q=80&w=2070&auto=format&fit=crop')" }} 
-      >
-        {/* Dark Overlay Gradient to make text readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-swapo-blue/90 to-transparent/40" />
+      {/* 1. BACKGROUND IMAGE (Local File) */}
+      <div className="absolute inset-0">
+        <Image 
+          src="/images/president.jpg" 
+          alt="President Netumbo Nandi-Ndaitwah"
+          fill
+          className="object-cover object-top" // Focus on the face
+          priority // Load this instantly
+        />
+        {/* Dark Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-swapo-blue/90 via-swapo-blue/60 to-transparent" />
       </div>
 
       {/* 2. HERO CONTENT */}
@@ -27,10 +31,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-swapo-red/90 text-sm font-bold tracking-wide mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-swapo-green/90 text-sm font-bold tracking-wide mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-            VOTE SWAPO 2025
+            THE RULING PARTY
           </motion.div>
 
           {/* Main Headline */}
@@ -44,18 +48,17 @@ export default function Hero() {
             <span className="text-swapo-yellow">Justice.</span>
           </motion.h1>
 
-          {/* Subheadline */}
+          {/* Subheadline - UPDATED FOR 2025 CONTEXT */}
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-lg md:text-xl text-gray-200 mb-8 max-w-lg"
           >
-            Continuing the legacy of progress with <strong>Comrade Netumbo Nandi-Ndaitwah</strong>. 
-            Join us in building an inclusive, prosperous Namibia for all.
+            Under the visionary leadership of <strong>H.E. President Netumbo Nandi-Ndaitwah</strong>, we are building a prosperous, industrialized Namibia.
           </motion.p>
 
-          {/* Call to Action Buttons */}
+          {/* Buttons */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,10 +67,10 @@ export default function Hero() {
           >
             <Link 
               href="/manifesto" 
-              className="flex items-center justify-center gap-2 bg-swapo-green text-white px-8 py-4 rounded-lg font-bold hover:bg-green-700 transition transform hover:-translate-y-1"
+              className="flex items-center justify-center gap-2 bg-swapo-red text-white px-8 py-4 rounded-lg font-bold hover:bg-red-700 transition"
             >
               <Download size={20} />
-              Download Manifesto
+              2025-2030 Manifesto
             </Link>
             
             <Link 
@@ -82,10 +85,10 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* 3. NEWS TICKER (Bottom Bar) */}
+      {/* 3. NEWS TICKER - UPDATED */}
       <div className="absolute bottom-0 w-full bg-swapo-red text-white py-3 overflow-hidden whitespace-nowrap">
         <div className="animate-marquee inline-block px-4 font-bold text-sm tracking-widest">
-          BREAKING: CENTRAL COMMITTEE ENDORSES NEW YOUTH EMPLOYMENT SCHEME +++ RALLY IN OSHAKATI THIS WEEKEND +++ 
+          VICTORY: SWAPO REGAINS CONTROL OF ERONGO REGION +++ PRESIDENT NANDI-NDAITWAH LAUNCHES NEW GREEN HYDROGEN INITIATIVE +++
         </div>
       </div>
     </div>
