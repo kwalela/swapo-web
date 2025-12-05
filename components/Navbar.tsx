@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react'; // Icons
+import Image from 'next/image'; // <--- This was missing!
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,16 +24,30 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           
           {/* 1. LOGO SECTION */}
-          <div className="flex-shrink-0 cursor-pointer">
-            <Link href="/">
+          <div className="flex-shrink-0 cursor-pointer flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-2">
+              
+              {/* The Image Logo */}
+              <div className="relative w-12 h-12 md:w-16 md:h-16">
+                <Image 
+                  src="/images/logo.png"
+                  alt="SWAPO Party Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+
+              {/* Text Label */}
               <div className="flex flex-col">
-                <h1 className="font-heading font-extrabold text-3xl tracking-tighter">
+                <span className="font-heading font-extrabold text-xl md:text-2xl tracking-tighter leading-none">
                   SWAPO
-                </h1>
-                <span className="text-[10px] font-sans tracking-widest text-swapo-red font-bold -mt-1 bg-white px-1">
+                </span>
+                <span className="text-[10px] font-sans tracking-widest text-swapo-red font-bold bg-white text-center px-1">
                   EST. 1960
                 </span>
               </div>
+
             </Link>
           </div>
 
@@ -74,7 +89,6 @@ export default function Navbar() {
       </div>
 
       {/* 5. MOBILE MENU DROPDOWN */}
-      {/* This only shows when isOpen is true */}
       {isOpen && (
         <div className="md:hidden bg-swapo-blue border-t border-white/10">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -83,7 +97,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className="block px-3 py-3 rounded-md text-base font-medium hover:bg-swapo-red hover:text-white transition"
-                onClick={() => setIsOpen(false)} // Close menu on click
+                onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </Link>
